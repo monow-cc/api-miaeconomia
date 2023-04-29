@@ -25,12 +25,13 @@ builder.Services.AddSwagger();
 var app = builder.Build();
 app.UseMiddleware(typeof(ErrorHandlerMiddleware));
 app.UseMiddleware(typeof(AuthenticatorMiddleware));
+app.UseAuthorization();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwaggerUI();
 }
 app.UseCors("CorsPolicy");
-app.UseAuthorization();
+
 
 app.MapControllers();
 

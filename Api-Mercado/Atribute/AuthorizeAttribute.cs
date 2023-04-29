@@ -6,11 +6,11 @@ using System.Net;
 namespace Api_Mercado.Atribute
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
-    public class AuthorizeAtribute : Attribute, IAuthorizationFilter
+    public class AuthorizeAttribute : Attribute, IAuthorizationFilter
     {
         private const string ACESSO_NAO_PERMITIDO = "Acesso negado.";
 
-        public AuthorizeAtribute()
+        public AuthorizeAttribute()
         {
 
         }

@@ -13,7 +13,6 @@ namespace Api_Mercado.Profiles
                 .ForPath(dest => dest.Email, opts => opts.MapFrom(x => x.Email))
                 .ForPath(dest => dest.Password, opts => opts.MapFrom(x => x.Password))
                 .ForPath(dest => dest.Region, opts => opts.MapFrom(x => x.Region));
-            
         }
     }
 }

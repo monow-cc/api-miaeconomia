@@ -34,7 +34,7 @@ namespace Api_Mercado.Services
             await _context.Markets.AddAsync(entity);
             await _context.SaveChangesAsync();
 
-            var Token = new AuthToken() { Token = _jwtService.GerarToken(entity)};
+            var Token = new AuthToken() { Token = _jwtService.MarketToken(entity)};
             return Token;
         }
         public async Task<AuthToken> Auth(MarketAuthVOEnter market)
@@ -43,8 +43,9 @@ namespace Api_Mercado.Services
             
             if (!BC.Verify(market.Password, verify.Password)) throw new AplicationRequestException("Dados incorretos", HttpStatusCode.Unauthorized);
 
-            var Token = new AuthToken() { Token = _jwtService.GerarToken(verify) };
+            var Token = new AuthToken() { Token = _jwtService.MarketToken(verify) };
             return Token;
         }
+       
     }
 }

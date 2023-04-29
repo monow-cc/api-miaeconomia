@@ -3,6 +3,7 @@ using System;
 using Api_Mercado.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api_Mercado.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230429211929_changeproduct")]
+    partial class changeproduct
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "7.0.5");
@@ -103,9 +106,6 @@ namespace Api_Mercado.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Ammount")
-                        .HasColumnType("INTEGER");
-
                     b.Property<long>("BarCode")
                         .HasColumnType("INTEGER");
 
@@ -124,17 +124,12 @@ namespace Api_Mercado.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<decimal>("Value")
                         .HasColumnType("decimal(0,2)");
 
                     b.HasKey("Id");
 
                     b.HasIndex("MarketId");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Products");
                 });
@@ -208,15 +203,7 @@ namespace Api_Mercado.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Api_Mercado.Model.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Market");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Api_Mercado.Model.Market", b =>

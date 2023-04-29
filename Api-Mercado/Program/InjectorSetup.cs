@@ -8,7 +8,9 @@ namespace Api_Mercado.Program
         {
             services.AddScoped<JWTService>();
             services.AddScoped<MarketServices>();
-
+            services.AddScoped<UserServices>();
+            services.AddScoped<MarketEmployesServices>();
+            services.AddScoped<ProductServices>();
         }
     }
 }
