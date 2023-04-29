@@ -88,3 +88,5 @@ C:\Users\Luan\Documents\GitHub\api-miaeconomia\Api-Mercado\bin\Debug\net6.0\Micr
 C:\Users\Luan\Documents\GitHub\api-miaeconomia\Api-Mercado\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
 C:\Users\Luan\Documents\GitHub\api-miaeconomia\Api-Mercado\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\Luan\Documents\GitHub\api-miaeconomia\Api-Mercado\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Luan\Documents\GitHub\api-miaeconomia\Api-Mercado\bin\Debug\net6.0\DevOne.Security.Cryptography.BCrypt.dll
+C:\Users\Luan\Documents\GitHub\api-miaeconomia\Api-Mercado\bin\Debug\net6.0\BCrypt.Net.dll

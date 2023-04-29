@@ -1,15 +1,13 @@
 ﻿using Api_Mercado.Enums;
 
-namespace Api_Mercado.Model
+namespace Api_Mercado.VOs.Enter.Market
 {
-    public class Market
+    public class MarketVOEnter
     {
-        public int Id { get; set; }
         public string MarketName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public DateTime CreatedAt { get; set; }
         public Region Region { get; set; }
-        public ICollection<MarketEmployed>? Employeds { get; set; }
+
     }
 }
