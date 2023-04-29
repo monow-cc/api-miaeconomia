@@ -31,7 +31,7 @@ namespace Api_Mercado.Services
                 issuer: _config.GetValue<string>("JWT:Issuer")!,
                 audience: _config.GetValue<string>("JWT:Audience")!,
                 claims: claims,
-                expires: expiration,
+                
                 signingCredentials: credenciais
             );
 

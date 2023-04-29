@@ -58,7 +58,7 @@ namespace Api_Mercado.Services
 
             product.UserId = id;
 
-            _context.Products.Entry(verify).State = EntityState.Modified;
+            _context.Entry(product).State = EntityState.Modified;
             await _context.SaveChangesAsync();
 
             await _context.Entry(product).Reference(x => x.Market).LoadAsync();
