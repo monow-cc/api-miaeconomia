@@ -24,15 +24,7 @@ namespace Api_Mercado.Controllers
         {
             var service = await _services.CreateProduct(product, HttpContext);
             return Ok(service);
-        }
-        [HttpPost("getupdate")]
-        [Authorize]
-        public async Task<ActionResult<Product>> GetProductUpdateMarket(ProductGetUpdateVOEnter product)
-        {
-            var service = await _services.GetProductUpdateMarket(product);
-            return Ok(service);
-            
-        }
+        }  
         [HttpPut]
         [Authorize]
         public async Task<ActionResult<ProductVOExit>> UpdateProduct(Product product)
@@ -45,6 +37,13 @@ namespace Api_Mercado.Controllers
         public async Task<ActionResult<IEnumerable<ProductVOExit>>> GetAll()
         {
             var service = await _services.GetAll();
+            return Ok(service);
+        }
+        [HttpPost("getlistproducts")]
+        [Authorize]
+        public async Task<ActionResult<IEnumerable<ProductVOExit>>> GetListProducts(ProductListVOEnter product)
+        {
+            var service = await _services.GetProductList(product);
             return Ok(service);
         }
     }
