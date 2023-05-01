@@ -41,6 +41,13 @@ namespace miaEconomiaApi.Controllers
             var service = await _services.GetAll();
             return Ok(service);
         }
+        [HttpGet("productsbydesc/{desc}")]
+        [Authorize]
+        public async Task<ActionResult<IEnumerable<ProductVOExit>>> ProductsByDesc(string desc)
+        {
+            var service = await _services.ProductsByDesc(desc);
+            return Ok(service);
+        }
 
         [HttpPost("getlistproducts")]
         [Authorize]

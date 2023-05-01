@@ -97,6 +97,12 @@ namespace miaEconomiaApi.Services
 
             return _mapper.Map<Product, ProductVOExit>(product);
         }
+        public async Task<IEnumerable<ProductVOExit>> ProductsByDesc(string desc)
+        {
+            var get = await _context.Products.Where(x => x.Description.Contains(desc)).ToListAsync();
+            var convertToListVO = _mapper.Map<List<Product>,List<ProductVOExit>>(get);
+            return convertToListVO;
+        }
     }
 }
 
