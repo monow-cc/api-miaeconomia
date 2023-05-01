@@ -41,6 +41,7 @@ namespace miaEconomiaApi.Controllers
             var service = await _services.GetAll();
             return Ok(service);
         }
+
         [HttpGet("productsbydesc/{desc}")]
         [Authorize]
         public async Task<ActionResult<IEnumerable<ProductVOExit>>> ProductsByDesc(string desc)
@@ -48,6 +49,7 @@ namespace miaEconomiaApi.Controllers
             var service = await _services.ProductsByDesc(desc);
             return Ok(service);
         }
+
         [HttpGet("productsbyid/{id}")]
         [Authorize]
         public async Task<ActionResult<IEnumerable<ProductVOExit>>> ProductsByDesc(int id)
@@ -55,6 +57,7 @@ namespace miaEconomiaApi.Controllers
             var service = await _services.ProductById(id);
             return Ok(service);
         }
+
         [HttpPost("getlistproducts")]
         [Authorize]
         public async Task<ActionResult<IEnumerable<ProductVOExit>>> GetListProducts(ProductListVOEnter product)
