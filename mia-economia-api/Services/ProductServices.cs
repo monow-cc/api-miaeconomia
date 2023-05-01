@@ -99,8 +99,16 @@ namespace miaEconomiaApi.Services
         }
         public async Task<IEnumerable<ProductVOExit>> ProductsByDesc(string desc)
         {
-            var get = await _context.Products.Where(x => x.Description.Contains(desc)).ToListAsync();
+            var get = await _context.Products.Where(x => x.Description.Contains(desc)).OrderBy(x => x.Value).ToListAsync();
             var convertToListVO = _mapper.Map<List<Product>,List<ProductVOExit>>(get);
+            return convertToListVO;
+        }
+        public async Task<ProductVOExit> ProductById(int id)
+        {
+            var get = await _context.Products.Where(x => x.Id == id).FirstOrDefaultAsync() 
+                ?? throw new AplicationRequestException("Produto nao encontrado",HttpStatusCode.NotFound);
+
+            var convertToListVO = _mapper.Map<Product,ProductVOExit>(get);
             return convertToListVO;
         }
     }
