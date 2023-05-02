@@ -2,6 +2,7 @@
 using miaEconomiaApi.Model;
 using miaEconomiaApi.Services;
 using miaEconomiaApi.VOs.Enter.Products;
+using miaEconomiaApi.VOs.Exit;
 using miaEconomiaApi.VOs.Exit.Products;
 using Microsoft.AspNetCore.Mvc;
 
@@ -63,6 +64,13 @@ namespace miaEconomiaApi.Controllers
         public async Task<ActionResult<IEnumerable<ProductVOExit>>> GetListProducts(ProductListVOEnter product)
         {
             var service = await _services.GetProductList(product);
+            return Ok(service);
+        }
+        [HttpPost("getmaketproducts")]
+        [Authorize]
+        public async Task<ActionResult<IEnumerable<MarketVOExit>>> GetMarketProducts(ProductListVOEnter product)
+        {
+            var service = await _services.GetMarketProducts(product);
             return Ok(service);
         }
     }

@@ -3,6 +3,7 @@ using miaEconomiaApi.Context;
 using miaEconomiaApi.Exeption;
 using miaEconomiaApi.Model;
 using miaEconomiaApi.VOs.Enter.Products;
+using miaEconomiaApi.VOs.Exit;
 using miaEconomiaApi.VOs.Exit.Products;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
@@ -112,6 +113,25 @@ namespace miaEconomiaApi.Services
 
             var convertToListVO = _mapper.Map<Product, ProductVOExit>(get);
             return convertToListVO;
+        }
+        public async Task<IEnumerable<MarketVOExit>> GetMarketProducts(ProductListVOEnter products)
+        {
+            var barcodes = products.BarCodes;
+
+            var result = await _context.Markets
+                .Include(p => p.Products.Where(x => barcodes.Contains(x.BarCode)))
+                .ToListAsync();
+
+            var convert = _mapper.Map<List<Market>, List<MarketVOExit>>(result);
+            foreach (var mercado in convert)
+            {
+                decimal total = mercado.Products.Sum(p => p.Value); // Soma os preços dos produtos
+
+                // Atribui o valor total ao mercado
+                mercado.Price = total;
+            }
+
+            return convert;
         }
     }
 }
