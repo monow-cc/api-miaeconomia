@@ -125,9 +125,7 @@ namespace miaEconomiaApi.Services
             var convert = _mapper.Map<List<Market>, List<MarketVOExit>>(result);
             foreach (var mercado in convert)
             {
-                decimal total = mercado.Products.Sum(p => p.Value); // Soma os preços dos produtos
-
-                // Atribui o valor total ao mercado
+                decimal total = mercado.Products.Sum(p => p.Value);
                 mercado.Price = total;
             }
 
