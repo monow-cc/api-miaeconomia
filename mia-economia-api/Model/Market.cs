@@ -12,5 +12,6 @@ namespace miaEconomiaApi.Model
         public DateTime CreatedAt { get; set; }
         public Region Region { get; set; }
         public ICollection<MarketEmployed>? Employeds { get; set; }
+        public ICollection<Product>? Products { get; set; }
     }
 }

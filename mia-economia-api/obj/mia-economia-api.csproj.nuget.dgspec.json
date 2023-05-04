@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projetos\\monow\\api-miaeconomia\\mia-economia-api\\mia-economia-api.csproj": {}
+    "C:\\Users\\Luan\\Documents\\GitHub\\api-miaeconomia\\mia-economia-api\\mia-economia-api.csproj": {}
   },
   "projects": {
-    "C:\\Projetos\\monow\\api-miaeconomia\\mia-economia-api\\mia-economia-api.csproj": {
+    "C:\\Users\\Luan\\Documents\\GitHub\\api-miaeconomia\\mia-economia-api\\mia-economia-api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projetos\\monow\\api-miaeconomia\\mia-economia-api\\mia-economia-api.csproj",
+        "projectUniqueName": "C:\\Users\\Luan\\Documents\\GitHub\\api-miaeconomia\\mia-economia-api\\mia-economia-api.csproj",
         "projectName": "mia-economia-api",
-        "projectPath": "C:\\Projetos\\monow\\api-miaeconomia\\mia-economia-api\\mia-economia-api.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Projetos\\monow\\api-miaeconomia\\mia-economia-api\\obj\\",
+        "projectPath": "C:\\Users\\Luan\\Documents\\GitHub\\api-miaeconomia\\mia-economia-api\\mia-economia-api.csproj",
+        "packagesPath": "C:\\Users\\Luan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Luan\\Documents\\GitHub\\api-miaeconomia\\mia-economia-api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Luan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -97,7 +97,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -109,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
